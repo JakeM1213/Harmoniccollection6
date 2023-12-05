@@ -1,0 +1,128 @@
+body {
+    font-family: 'Caveat', sans-serif;
+    background-image: url(https://media.giphy.com/media/26tneSGWphvmFlUju/giphy.gif);
+    margin: 0;
+    p.dotted {border-style: dotted;}
+}
+.center-text {
+    text-align: center;
+}
+
+div {
+    border: 1px solid rgb(28, 137, 255);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    
+  }
+
+h1, h2 {
+    color: #3498db;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+}
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    animation: animatedBackground 10s linear infinite;
+}
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 5% 0;
+    }
+    100% {
+        background-position: 10% 100%;
+    }
+}
+
+h1, h2 {
+    color: blue;
+    text-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+/* ... rest of your CSS ... */
+
+div.img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 20%;
+}
+
+img {
+    border-radius: 50%;
+    transition: transform 0.2s;
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    
+}
+
+img:hover {
+    transform: scale(4.5);
+}
+
+.image-rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+}
+
+.image-row img {
+    max-width: 1000px; /* Adjust the size as needed */
+    height: auto;
+    margin: 5px; /* Add spacing between images */
+}
+
+/* Add divider lines */
+.image-row:not(:last-child) {
+    border-bottom: 10px solid #661bb09e; /* Change the color and style as needed */
+    margin-bottom: 10px; /* Adjust the spacing between rows */
+}
+
+.image-row::before {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Corrected the unit for height */
+    left: 0;
+    width: 100%;
+    height: 1px; /* Added a value for height */
+    background-color: #000000;
+    animation: moveBorder 2s linear infinite;
+}
+
+/* Animation properties */
+@keyframes moveBorder {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
